@@ -1,0 +1,36 @@
+<div class="wrapper banner-image " ng-if="showSite">
+	<div class="banner-text-container text-center">
+		<h1 class="banner-text">Save the Date</h1>
+		<img class="sarah-erik-text" src="img/sarah-erik-text.png"/>
+		<h2 class="banner-text">June 20th, 2017 &bull; Interlaken, Switzerland</h2>
+		<p>Formal Invitation to Follow</p>
+	</div>
+		
+	<div class="container large-padder text-center">
+		<div class="postcard">
+			<div class="postcard-inner">
+				<h1>We're Getting Married!</h1>
+				<img class="divider" src="img/branch.png"/>
+				<div class="row">
+					<div class="col-md-12">
+						<p>That's right! We are tying the knot next summer in beautiful Interlaken, Switzerland.</p>
+						<p>We are very excited to share this momentous occasion with our closest friends and family. It is our hope that our guests will be able to stay for a prolonged celebration with us in Interlaken, June 18th-21st, with an intimate wedding ceremony and reception falling on June 20th.</p>
+						<p>Mark your calendars, and we'll be in touch soon with more information.</p>
+						<img class="divider reverse" src="img/branch.png"/>
+						<div ng-if="guest">
+							<h2>Thinking of coming?</h2>
+							<form>
+								<label ng-model="guest.rsvp" for="yes"> Absolutely! <input ng-change="changeRSVP()" ng-model="guest.rsvp" id="yes" type="radio" name="rsvp" value="1"/></label>
+								<label ng-model="guest.rsvp" for="maybe">Not sure yet... <input ng-change="changeRSVP()" ng-model="guest.rsvp" id="maybe" type="radio" name="rsvp" value="2"/></label>
+								<label ng-model="guest.rsvp" for="no"> Unlikely <input ng-change="changeRSVP()" ng-model="guest.rsvp" id="no" type="radio" name="rsvp" value="0"/></label>
+							</form>
+							<p class="pop-in" ng-if="formSubmitted">Thank You!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-if="showGuest" class="guest-text banner center-all text-center fade-in-out">Hello {{guest ? ""+guest.name : ""}}</div>

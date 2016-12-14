@@ -1,0 +1,202 @@
+*{
+	margin: 0;
+}
+body, html{
+	font-family: 'Josefin Slab', serif;
+	font-weight:400;
+	color:#555;
+}
+h1{
+	font-size:3.5em;
+}
+h2{
+	font-size:2.2em;
+}
+p{
+	margin:1em 0;
+}
+p, label{
+	font-size:1.4em;
+	line-height: 1.7em;
+	font-weight:600;
+}
+label{
+	padding:0 1em;
+}
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+.center-all{
+  /*display:-ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -ms-flex-direction: column;
+  display:-webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;*/
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+}
+.full-width{
+	width:100%;
+}
+.full-height{
+	min-height:100vh;
+}
+.wrapper{
+	animation: fadeIn 1.5s ease-in-out;
+}
+.banner-text-container{
+	opacity:0;
+	animation: fadeIn 1.5s 2s ease-in-out forwards, zoomIn 1.5s 2s ease-in-out forwards;
+	padding: 10% 10% 5% 10%;
+}
+.banner-text{
+	color:#fff;
+	letter-spacing: 0.1em;
+}
+.banner-image{
+	width:100%;
+	background: url(../img/swiss-bg.jpg) center center no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.banner-overlay-image{
+	width:65%;
+	margin:auto;
+}
+.banner-subtext{
+	position: absolute;
+	bottom:5%;
+	left:0;
+	right:0;
+	font-weight: bolder;
+}
+.backgroundcliptext .guest-text{
+	background:url(../img/swiss-bg.jpg) center center no-repeat;
+	background-size:cover;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.guest-text{
+	font-size:6em;
+	color:#122263;
+	height: 2em;
+}
+.sarah-erik-text{
+	max-width:90%;
+}
+.large-padder{
+	padding:3em 0;
+}
+.photo-holder{
+	width:100%;
+	overflow: hidden;
+}
+.photo-holder img{
+	width:20%;
+	float:left;
+}
+
+/* Postcard */
+.postcard{
+	width:90%;
+	max-width:800px;
+	padding:1.5em;
+	background: #fff;
+	opacity:0;
+	animation: fadeIn 1.5s 4s ease-in-out forwards, zoomIn 1.5s 4s ease-in-out forwards;
+	margin:auto;
+}
+.postcard-inner{
+	color: #1e2a3f;
+	border: 1px solid #1e2a3f;
+	padding:4em 10%;
+}
+.divider{
+	width:75px;
+	margin: 0.5em auto;
+}
+.divider.reverse{
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.pop-in{
+	animation: fadeIn 1.5s ease-in-out forwards, zoomIn 1.5s ease-in-out forwards;
+}
+.scroll-reveal{
+	opacity:0;
+	/*transform: translateY(50px);*/
+	transition: opacity 1s, transform 1s;
+}
+.scroll-reveal.revealed{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media screen and (orientation:portrait){
+	p, label{
+		font-size:2em;
+	}
+	.sarah-erik-text{
+		width:100%;
+	}
+	.banner-text-container{
+		padding:25% 5%;
+		font-weight: bolder;
+	}
+	.banner-image{
+		background: url(../img/swiss-bg-small.jpg) top center no-repeat;
+		background-size: 120% auto;
+	}
+	.postcard{
+		width:100%;
+		animation: none;
+		opacity: 1;
+	}
+	.large-padder{
+		padding:0;
+	}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeInOut {
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    70% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes flyUp {
+    from {transform: translateY(2em);}
+    to {transform: translateY(0);}
+}
+@keyframes zoomIn {
+    from {transform: scale(0.95,0.95)}
+    to {transform: scale(1,1);}
+}
+
+@media screen and (max-width: 1023px){
+	body{
+		font-size:0.95em;
+	}
+}
+.fade-in-out{
+  animation: fadeInOut 3s ease-in-out, zoomIn 3s ease-in-out;
+  opacity:0;
+}
+
