@@ -1,0 +1,85 @@
+{
+    "accomodations":[
+        {
+            "name":"Hotel Royal St. Georges",
+            "address":"Hoeheweg 139, 3800 Interlaken",
+            "map":"https://www.google.com/maps/place/Hotel+Royal+St+Georges+Interlaken+MGallery+by+Sofitel/@46.6888173,7.8605578,17z/data=!3m1!4b1!4m5!3m4!1s0x478fa49f03cb22c7:0x2a55b8ecd168e0d1!8m2!3d46.6888136!4d7.8627465",
+            "website":"http://www.accorhotels.com/gb/hotel-8983-hotel-royal-st-georges-interlaken-mgallery-by-sofitel/index.shtml"
+        },
+        {
+            "name":"Lindner Grand Hotel Beau Rivage",
+            "address":"Höheweg 211, 3800 Interlaken",
+            "map":"https://www.google.com/maps/place/Lindner+Grand+Hotel+Beau+Rivage/@46.6897582,7.8623509,17z/data=!3m1!4b1!4m5!3m4!1s0x478fa49fba428c21:0x1acc3977b2b35190!8m2!3d46.6897545!4d7.8645396",
+            "website":"https://www.lindner.de/en/interlaken-grand-hotel-beau-rivage/welcome.html"
+        },
+        {
+            "name":"City Hotel Oberland",
+            "address":"Höheweg 7, 3800 Interlaken",
+            "map":"",
+            "website":"http://www.city-oberland.ch/"
+        },
+        {
+            "name":"Hotel Interlaken",
+            "address":"Höheweg 74, 3800 Interlaken",
+            "map":"",
+            "website":"http://hotelinterlaken.ch/?lang=en"
+        },
+        {
+            "name":"Hotel Toscana",
+            "address":"Jungfraustrasse 19, Interlaken",
+            "map":"",
+            "website":"https://www.hotel-toscana.ch/"
+        },
+        {
+            "name":"Interlaken Airbnb",
+            "address":"Airbnb rentals in Interlaken",
+            "map":"",
+            "website":"https://www.airbnb.com/s/Interlaken--Switzerland?page=1&s_tag=U4s5H6S9&allow_override%5B%5D="
+        },
+        {
+            "name":"Interlaken HomeAway",
+            "address":"HomeAway rentals in Interlaken",
+            "map":"",
+            "website":"https://www.homeaway.com/d/1703/interlaken"
+        }
+    ],
+    "flying":[
+        {
+            "name":"Zurich",
+            "code":"(ZRH)"
+        },
+        {
+            "name":"Milan",
+            "code":"(MXP)"
+        },
+        {
+            "name":"Geneva",
+            "code":"(GVA)"
+        },
+        {
+            "name":"Basel",
+            "code":"(BSL)"
+        },
+        {
+            "name":"Bern",
+            "code":"(BRN)"
+        }
+    ],
+    "transportation":[
+        {
+            "name":"Swiss Rail/Travel Pass",
+            "description":"The Swiss Rail pass covers most forms of transportation in Switzerland including trains, busses, and even some ferrys.",
+            "website":"https://www.swiss-pass.ch/"
+        },
+        {
+            "name":"Aare Taxi",
+            "phone":"+41 (0)79 415 0500",
+            "website":"http://www.taxiinterlaken.ch/index.php/en/"
+        },
+        {
+            "name":"Bahnhoftaxi Interlaken ",
+            "phone":"+41 (0) 33 822 50 50 ",
+            "email":"info@bahnhoftaxi-interlaken.ch"
+        }
+    ]
+}

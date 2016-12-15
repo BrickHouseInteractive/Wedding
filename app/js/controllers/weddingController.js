@@ -1,54 +1,35 @@
 angular.module('wedding').controller('WeddingCtrl', ['$scope','$timeout','$rootScope','$http','$routeParams','Guests', function($scope, $timeout, $rootScope, $http, $routeParams, Guests){
 
-	//Frame height
-	// var setFrameHeight = function(){
-	// 	var windowHeight = window.innerHeight;
-	// 	//if(window.innerWidth > 800){
-	// 		 $(".banner").css({minHeight: windowHeight});
-	// 	//}
-	// }
-	// window.addEventListener("resize", setFrameHeight);
+	$scope.showHeader = false;
+	$scope.localInfo = {};
+	$scope.timeline = [];
 
-	//Intro Animation
-	var siteTimeout = function(){
-		$scope.showGuest = true;
-		//$timeout(setFrameHeight);
-		$timeout(function(){
-			$scope.showGuest = false;
-			$scope.showSite = true;
-			//$timeout(setFrameHeight);
-		},3000)
+
+	/* Header */
+	function checkHeader(){
+		if($(window).scrollTop() > 10){
+			$scope.showHeader = true;
+		}else{
+			$scope.showHeader = false;
+		}
 	}
 
-	//Get Guest Info
-	if($routeParams.id){
-		Guests.get($routeParams.id,
-			function(data){
-				console.log(data);
-				$scope.guest = data;
-				siteTimeout()
-			}, 
-			function(data){
-				console.logError("Failed to get guest");
-				siteTimeout();
-			}
-		);
-	}else{
-		siteTimeout();
-	}
+	$(window).scroll(checkHeader);
+	checkHeader();
 
-	//RSVP
-	$scope.changeRSVP = function(){
-		$scope.formSubmitted = true;
-		Guests.rsvp($scope.guest.id, $scope.guest.rsvp,
-			function(data){
-				console.log("Success!");
-			},
-			function(data){
-				console.log("Failure");
-			}
-		)
-	}
+	/* Local Info */
+	$http.get("data/local-info.json").then(function(response){
+		$scope.localInfo = response.data;
+	},function(data){
+		//error
+	})
+
+	/* Timeline */
+	$http.get("data/timeline.json").then(function(response){
+		$scope.timeline = response.data;
+	},function(data){
+		//error
+	})
 
 	//Form Submit
 	/*$scope.formData = {};

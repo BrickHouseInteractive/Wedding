@@ -5,25 +5,29 @@ directive('scrollReveal', ['$timeout', function($timeout){
 		// name: '',
 		// priority: 1,
 		// terminal: true,
-		scope: true,
+		scope: {
+			delay: "@"
+		},
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-		template: '<div class="scroll-reveal" ng-class="{revealed:reveal}" ng-transclude></div>',
+		//template: '<div class="scroll-reveal" ng-class="{revealed:reveal}" ng-transclude></div>',
 		// templateUrl: '',
-		replace: true,
-		transclude: true,
+		//replace: true,
+		//transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function($scope, iElm, iAttrs, controller) {
 			$scope.reveal = false;
+			$scope.delay = $scope.delay || 100;
+
+			iElm.addClass("scroll-reveal");
 
 			var checkReveal = function(){
-				console.log("revealed");
 				if($scope.reveal === true) return;
-		    	if(iElm.offset().top - window.innerHeight <= $(window).scrollTop()){
+		    	if(iElm.offset().top - window.innerHeight+100 <= $(window).scrollTop()){
 		    		$timeout(function(){
-		    			$scope.reveal = true;
-		    		},100);
+		    			iElm.addClass("revealed");
+		    		}, $scope.delay);
 		    	};
 			};
 

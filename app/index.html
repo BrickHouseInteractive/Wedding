@@ -8,13 +8,16 @@
     <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,600' rel='stylesheet' type='text/css'>
     <!-- build:css css/site.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
     <link rel='stylesheet' href='css/style.css' />
     <!-- endbuild -->
   </head>
   <body ng-app="wedding">
   	
   	<div ng-view></div>
-	
+
+	<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCcyWD30QmaFzvN-sw4h4CuRUYICZhQOpc&sensor=false&extension=.js'></script> 
+
 	<!-- build:js js/plugins.js -->
 	<script type="text/javascript" src="bower_components/prefixfree/prefixfree.min.js"></script>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -29,9 +32,12 @@
 
 	<!-- build:js js/app.js -->
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/weddingController.js"></script>
-	<script type="text/javascript" src="js/guests.js"></script>
-	<script type="text/javascript" src="js/scrollReveal/scrollReveal.js"></script>
+	<script type="text/javascript" src="js/controllers/weddingController.js"></script>
+	<script type="text/javascript" src="js/services/guests.js"></script>
+	<script type="text/javascript" src="js/services/loader.js"></script>
+	<script type="text/javascript" src="js/directives/scrollReveal/scrollReveal.js"></script>
+	<script type="text/javascript" src="js/directives/menu/menu.js"></script>
+	<script type="text/javascript" src="js/directives/map/map.js"></script>
 	<!-- endbuild -->
 </body>
 </html>

@@ -1,10 +1,10 @@
 {
-  "name": "EightFold",
+  "name": "wedding",
   "version": "1.0.0",
   "authors": [
     "Erik Sundberg"
   ],
-  "description": "EightFold Website",
+  "description": "Wedding Website",
   "main": "index.html",
   "license": "MIT",
   "ignore": [
@@ -22,9 +22,8 @@
     "angular-animate": "~1.4.2",
     "angular-scroll": "~0.7.1",
     "prefixfree": "*",
-    "angular-route": "^1.5.7"
-  },
-  "devDependencies": {
+    "angular-route": "^1.5.7",
+    "font-awesome": "^4.7.0",
     "bootstrap": "~3.3.6"
   }
 }

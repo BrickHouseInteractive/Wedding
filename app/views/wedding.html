@@ -1,10 +1,154 @@
-<section class="banner-image full-height" style="background-image:url(img/sarah-erik-hero.jpg)" scroll-reveal>
+<header menu></header>
+<div id="top" class="banner-image full-height" style="background-image:url(img/sarah-erik-hero.jpg)">
     <div class="text-center">
-        <img class="banner-overlay-image" src="img/sarah-erik-typography.png"/>
-        <h2 class="banner-subtext">Interlaken, Switzerland June 20th, 2017</h2>
+        <img scroll-reveal delay="1000" class="banner-overlay-image" src="img/sarah-erik-typography.png"/>
+        <h2 scroll-reveal delay="1000" class="banner-subtext">Interlaken, Switzerland &bull; June 20th, 2017</h2>
     </div>
-</section>
-<section class="container-fluid"> 
-    <h1>We're Getting Married!</h1>
-    <p>Lorem Ipsum</p>
-</section>
+</div>
+<div class="wrapper">
+    <!-- Our Story -->
+    <section id="story" class="container  text-center"> 
+        <div scroll-reveal>
+            <h1 class="header-divider">We're Getting Married!</h1>
+            <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at metus tortor. Aenean tellus turpis, ullamcorper ac tempus eget, pellentesque eget justo. In hac habitasse platea dictumst. </p>
+        </div>
+    </section>
+    <!-- Autumn Engagement -->
+    <section class="large-top-padder">
+        <div class="banner-image half-height" style="background-image:url(img/autumn-engagement.jpg)"></div>
+    </section>
+    <!-- Engagement -->
+    <section id="engagement" class="container text-center">
+         <div scroll-reveal>
+            <h2 class="header-divider">Engagement</h2>
+        </div>
+        <div class="row section-top-padder">
+            <div class="col-sm-6">
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-1.jpg"/>
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-3.jpg"/>
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-5.jpg"/>
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-6.jpg"/>
+            </div>
+            <div class="col-sm-6">
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-2.jpg"/>
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-4.jpg"/>
+                <img class="portfolio-img " scroll-reveal src="img/engagement/engagement-7.jpg"/>
+            </div>
+        </div>
+    </section>
+    <!-- Interlaken -->
+    <section class="large-top-padder">
+        <div class="banner-image half-height large-top-padder" style="background-image:url(img/interlaken.jpg)"></div>
+    </section>
+    <!-- Venue & Location -->
+    <section id="venue" class="container text-center"> 
+        <div scroll-reveal>
+            <h2 class="header-divider">Venue &amp; Location</h2>
+            <p>Schloss Oberhofen</p>
+        </div>
+        <div class="row section-top-padder" scroll-reveal>
+            <div class="col-sm-6">
+                <div class="map-img"></div>
+            </div>
+            <div class="col-sm-6">
+                <div map></div>
+            </div> 
+        </div>
+    </section>
+    <!-- Timeline -->
+    <section id="timeline" class="container text-center"> 
+        <div scroll-reveal>
+            <h2 class="header-divider">Timeline</h2>
+        </div>
+        <div class="timeline section-top-padder">
+            <div ng-repeat="t in timeline">
+                <h3 ng-if="t.type == 'header'" class="timeline-header" scroll-reveal>{{t.text}}</h3>
+                <div ng-if="t.type == 'left'" class="row" scroll-reveal>
+                    <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-10 timeline-left">
+                        <!--h4 class="timeline-time">{{t.time}}</h4-->
+                        <div class="timeline-icon fa" ng-class="t.icon"></div>
+                        <div class="rounded-panel text-right">
+                            <h4>{{t.time}}</h4>
+                            <p>{{t.text}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="t.type == 'right'" class="row" scroll-reveal>
+                    <div class="col-md-4 col-sm-6 col-sm-offset-6 col-xs-10 timeline-right">
+                        <div class="timeline-icon fa" ng-class="t.icon"></div>
+                        <div class="rounded-panel text-left">
+                            <h4>{{t.time}}</h4>
+                            <p>{{t.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Transportation & Accomodations -->
+    <section id="info" class="container text-center"> 
+        <div scroll-reveal>
+            <h2 class="header-divider">Transportation &amp; Accomodations</h2>
+        </div>
+        <div class="row section-top-padder" scroll-reveal>
+            <div class="col-sm-12">
+                <div class="rounded-panel">
+                    <i class="fa fa-bed fa-lg"></i>
+                    <h3 class="header-divider">Accomodations</h3>
+                    <p class="local-info-description">The bride + groom and their wedding parties will be staying at the house in Rinngenberg. The city of Interlaken is between the ceremony and reception venues, and would make an ideal place to find accommodation. Here are a few options:</p>
+                    <div class="row">
+                        <div class="local-info col-md-4 col-sm-6" ng-repeat="l in localInfo.accomodations">
+                            <p>
+                                <b>{{l.name}}</b><br/>
+                                <span>{{l.address}}</span>
+                            </p>
+                            <p>
+                                <a ng-if="l.website" ng-href="{{l.website}}" target="_blank" class="local-info-link fa fa-link fa-lg"></a>
+                                <a ng-if="l.map" ng-href="{{l.map}}" target="_blank" class="local-info-link fa fa-map-marker fa-lg"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row match-my-cols" scroll-reveal>
+            <div class="col-sm-6 section-top-padder">
+                <div class="rounded-panel">
+                    <i class="fa fa-train fa-lg"></i>
+                    <h3 class="header-divider">Ground Transport</h3>
+                    <p class="local-info-description">It is very easy to get around by train in Switzerland. Individual tickets can be purchased on most trains, or a Swiss Rail/Travel Pass can be purchased in advance.</p>
+                    <div class="row">
+                        <div class="local-info col-md-6" ng-repeat="l in localInfo.transportation">
+                            <p>
+                                <b>{{l.name}}</b><br/>
+                                <span>{{l.description}}</span>
+                            </p>
+                            <p>
+                                <a ng-if="l.website" ng-href="{{l.website}}" target="_blank" class="local-info-link fa fa-link fa-lg"></a>
+                                <a ng-if="l.phone" ng-href="{{l.phone}}" target="_blank" class="local-info-link fa fa-phone fa-lg"></a>
+                                <a ng-if="l.email" ng-href="{{l.email}}" target="_blank" class="local-info-link fa fa-envelope fa-lg"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 section-top-padder">
+                <div class="rounded-panel">
+                    <i class="fa fa-plane fa-lg"></i>
+                    <h3 class="header-divider">Flying</h3>
+                    <p>There is a small airport in Interlaken as well as several large airports in nearby cities. <a href="https://www.rome2rio.com/s/Nearby-Airports/Interlaken-Switzerland" target="_blank">Click here</a> to see the closest options.</p>
+                    <div class="local-info col-xs-6" ng-repeat="l in localInfo.flying">
+                        <p>
+                            <b>{{l.name}}</b><br/>
+                            <span>{{l.code}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <h3><i class="fa fa-envelope fa-xl"></i> <a href="mailto:wedding@sarahanderik.ch">wedding@sarahanderik.ch</a></h3>
+</footer>
