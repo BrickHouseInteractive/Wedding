@@ -15,8 +15,8 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
 		//transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function($scope, iElm, iAttrs, controller) {
-			$scope.reveal = false;
-			iElm.addClass("scroll-reveal");
+
+            $scope.showHeader = false;
 
             $scope.scrollTo = function(id){
                 $("html, body").animate(
@@ -26,17 +26,18 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
                 );
             }
 
-			var checkReveal = function(){
-				if($scope.reveal === true) return;
-		    	if(iElm.offset().top - window.innerHeight+100 <= $(window).scrollTop()){
-		    		$timeout(function(){
-		    			iElm.addClass("revealed");
-		    		},100);
-		    	};
-			};
 
-			$(window).scroll(checkReveal);
-			checkReveal();
+            /* Header */
+            function checkHeader(){
+                if($(window).scrollTop() > 10){
+                    $scope.showHeader = true;
+                }else{
+                    $scope.showHeader = false;
+                }
+            }
+
+            $(window).scroll(checkHeader);
+            checkHeader();
 		}
 	};
 }]);

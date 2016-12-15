@@ -102,13 +102,13 @@ section{
 /* Header */
 .header{
 	width:100%;
-	background: transparent;
+	background-color: transparent;
 	padding:1em;
 	text-align: center;
 	position: fixed;
 	top: 0;
 	z-index: 1;
-	transition: all 0.2s;
+	transition: all 0.4s;
 }
 .header-item{
 	padding:0 1em;

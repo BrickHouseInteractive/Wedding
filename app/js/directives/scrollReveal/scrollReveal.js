@@ -11,7 +11,6 @@ directive('scrollReveal', ['$timeout', function($timeout){
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-		//template: '<div class="scroll-reveal" ng-class="{revealed:reveal}" ng-transclude></div>',
 		// templateUrl: '',
 		//replace: true,
 		//transclude: true,
@@ -19,7 +18,7 @@ directive('scrollReveal', ['$timeout', function($timeout){
 		link: function($scope, iElm, iAttrs, controller) {
 			$scope.reveal = false;
 			$scope.delay = $scope.delay || 100;
-
+			
 			iElm.addClass("scroll-reveal");
 
 			var checkReveal = function(){

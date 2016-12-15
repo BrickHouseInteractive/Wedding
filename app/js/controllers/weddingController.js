@@ -1,21 +1,7 @@
 angular.module('wedding').controller('WeddingCtrl', ['$scope','$timeout','$rootScope','$http','$routeParams','Guests', function($scope, $timeout, $rootScope, $http, $routeParams, Guests){
 
-	$scope.showHeader = false;
 	$scope.localInfo = {};
 	$scope.timeline = [];
-
-
-	/* Header */
-	function checkHeader(){
-		if($(window).scrollTop() > 10){
-			$scope.showHeader = true;
-		}else{
-			$scope.showHeader = false;
-		}
-	}
-
-	$(window).scroll(checkHeader);
-	checkHeader();
 
 	/* Local Info */
 	$http.get("data/local-info.json").then(function(response){
