@@ -1,4 +1,6 @@
 <header class="header" ng-class="{scrolled: showHeader}">
+    <div class="header-mobile-icon fa" ng-class="showMobileMenu ? 'fa-times' : 'fa-bars'" ng-click="toggleMobileMenu()"></div>
+    
     <a class="header-item" ng-click="scrollTo('story')">Our Story</a>
     <a class="header-item" ng-click="scrollTo('engagement')">Engagement</a>
     <a class="header-item" ng-click="scrollTo('venue')">Venue &amp; Location</a>
@@ -6,4 +8,15 @@
     <a class="header-item" ng-click="scrollTo('timeline')">Timeline</a>
     <a class="header-item" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
     <a class="btn btn-default rsvp-button">RSVP</a>
+
+    <div class="header-mobile-overlay" ng-show="showMobileMenu">
+        <div class="header-mobile-overlay-container">
+            <a class="h2" ng-click="scrollTo('story')">Our Story</a>
+            <a class="h2" ng-click="scrollTo('engagement')">Engagement</a>
+            <a class="h2" ng-click="scrollTo('venue')">Venue &amp; Location</a>
+            <a class="h2" ng-click="scrollTo('timeline')">Timeline</a>
+            <a class="h2" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
+        </div>
+    </div>
+
 </header>

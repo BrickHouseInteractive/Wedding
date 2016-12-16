@@ -64,19 +64,19 @@
             <div ng-repeat="t in timeline">
                 <h3 ng-if="t.type == 'header'" class="timeline-header" scroll-reveal>{{t.text}}</h3>
                 <div ng-if="t.type == 'left'" class="row" scroll-reveal>
-                    <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-10 timeline-left">
+                    <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12 timeline-left">
                         <!--h4 class="timeline-time">{{t.time}}</h4-->
-                        <div class="timeline-icon fa" ng-class="t.icon"></div>
-                        <div class="rounded-panel text-right">
+                        <div class="rounded-panel">
+                            <div class="timeline-icon fa" ng-class="t.icon"></div>
                             <h4>{{t.time}}</h4>
                             <p>{{t.text}}</p>
                         </div>
                     </div>
                 </div>
                 <div ng-if="t.type == 'right'" class="row" scroll-reveal>
-                    <div class="col-md-4 col-sm-6 col-sm-offset-6 col-xs-10 timeline-right">
-                        <div class="timeline-icon fa" ng-class="t.icon"></div>
-                        <div class="rounded-panel text-left">
+                    <div class="col-md-4 col-sm-6 col-sm-offset-6 col-xs-12 timeline-right">
+                        <div class="rounded-panel">
+                            <div class="timeline-icon fa" ng-class="t.icon"></div>
                             <h4>{{t.time}}</h4>
                             <p>{{t.text}}</p>
                         </div>

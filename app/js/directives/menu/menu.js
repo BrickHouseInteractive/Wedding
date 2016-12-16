@@ -17,6 +17,7 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
 		link: function($scope, iElm, iAttrs, controller) {
 
             $scope.showHeader = false;
+            $scope.showMobileMenu = false;
 
             $scope.scrollTo = function(id){
                 $("html, body").animate(
@@ -24,8 +25,8 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
                     1000,
                     'swing'
                 );
+                $scope.showMobileMenu = false;
             }
-
 
             /* Header */
             function checkHeader(){
@@ -38,6 +39,11 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
 
             $(window).scroll(checkHeader);
             checkHeader();
+
+            /* Mobile */
+            $scope.toggleMobileMenu = function(){
+                $scope.showMobileMenu = !$scope.showMobileMenu;
+            }
 		}
 	};
 }]);
