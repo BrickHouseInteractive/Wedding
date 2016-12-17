@@ -185,8 +185,11 @@ section{
 	justify-content: center;
 }
 .banner-overlay-image{
-	width:55%;
+	width:45%;
 	margin:auto;
+}
+.banner-overlay-image svg{
+	width:100%;
 }
 .banner-subtext{
 	position: absolute;
