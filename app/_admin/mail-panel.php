@@ -33,12 +33,14 @@
 	  			<th>Email</th>
 	  			<th>Visited</th>
 	  			<th>RSVP</th>
+				<th>Predictions</th>
 	  			<th>Send Email</th>
 	  		</tr>
 	  		<?php
 	  			$response = file_get_contents('http://localhost:8888/_admin/_guests.php');
 				$response = json_decode($response,true);
 				$totalPossible = 0;
+				$totalPredicted = 0;
 
 				foreach ($response as $guest){
 					echo "<tr>".
@@ -50,18 +52,25 @@
 					"<td>".$guest["email"]."</td>".
 					"<td>".$guest["visited"]."</td>".
 					"<td>".$guest["rsvp"]."</td>".
+					"<td>".$guest["prediction"]."</td>".
 					"<td><input name='".$guest["id"]."'' type='checkbox' value='".$guest["email"]."'/></td>".
 					"</tr>";
 					if($guest["rsvp"] == 1 OR $guest["rsvp"] == 2){
 						$totalPossible += 1/$guest["rsvp"]*($guest["adults"] + $guest["children"]);
+					}
+					if($guest["prediction"] == 1 OR $guest["prediction"] == 2){
+						$totalPredicted += 1/$guest["prediction"]*($guest["adults"] + $guest["children"]);
 					}
 				}
 	  		?>
 	  		<tr>
 	  			<th colspan="7">Total Possible</th>
 	  			<td><?php echo $totalPossible ?></td>
+
+	  			<td><?php echo $totalPredicted ?></td>
 	  			<td></td>
 	  		</tr>
+			  
 	  	</table>
 	  	<!--div class="row>">
 	  		<div class="col-xs-6">

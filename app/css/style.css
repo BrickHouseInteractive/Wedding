@@ -23,15 +23,16 @@ h4{
 	display: block;
 }
 p{
-	margin:1em 0;
+	margin:1em auto;
 	font-family: 'Times New Roman', Times, serif;
+	max-width:800px;
 }
 p, label{
 	font-size:1.2em;
 	line-height: 1.5em;
 }
 p.large{
-	font-size:1.4em;
+	font-size:1.6em;
 	line-height: 1.7em;
 }
 label{
@@ -76,7 +77,7 @@ a:hover{
 	min-height:100vh;
 }
 .half-height{
-	min-height:50vh;
+	min-height:70vh;
 }
 section{
 	padding:3em 0;
@@ -94,7 +95,7 @@ section{
 	transform: translateY(0);
 }
 .wrapper{
-	padding:3em 0;
+	padding:3em 0 0;
 }
 .clear-both{
 	clear: both;
