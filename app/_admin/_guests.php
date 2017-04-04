@@ -12,8 +12,6 @@ if(array_key_exists('PATH_INFO', $_SERVER) === true){
 $input = json_decode(file_get_contents('php://input'),true) OR $input = [];
 $table = "guests";
 
-
-
 // // connect to the mysql database
 //$link = mysqli_connect('localhost:8889', 'root', 'root', 'wedding');
 $link = mysqli_connect('72.52.231.174', 'weddingmanager', 'Gm;HgC9ES1GJ7I%2p?', 'wedding');
@@ -27,7 +25,7 @@ $values = array_map(function ($value) use ($link) {
    if ($value===null) return null;
    return mysqli_real_escape_string($link,(string)$value);
 },array_values($input));
- 
+
 // // build the SET part of the SQL command
 $set = '';
 for ($i=0;$i<count($columns);$i++) {
@@ -61,7 +59,7 @@ if (!$result) {
 }else if($result && $method == 'GET'){
   mysqli_query($link, "update $table set visited=visited+1 where id='$key'");
 }
- 
+
 // print results, insert id or affected row count
 if ($method == 'GET') {
   if (!$key) echo '[';

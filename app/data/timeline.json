@@ -14,19 +14,19 @@
         "text":"Tuesday, June 20th"
     },
     {
-        "type":"left",
+        "type":"right",
         "text":"Pre-ceremony champagne",
         "time":"4:30pm",
         "icon":"fa-glass"
     },
     {
-        "type":"right",
+        "type":"left",
         "text":"Ceremony at Schloss Oberhofen",
         "time":"5:00pm",
         "icon":"fa-venus-mars"
     },
     {
-        "type":"left",
+        "type":"right",
         "text":"Reception at Ringgenberg House",
         "time":"6:30pm",
         "icon":"fa-cutlery"
@@ -37,7 +37,7 @@
     },
     {
         "type":"left",
-        "text":"Depart at Ringgenberg House",
+        "text":"Depart Ringgenberg House",
         "time":"11:00am",
         "icon":"fa-home"
     }

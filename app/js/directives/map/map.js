@@ -15,12 +15,14 @@ directive('map', ['$timeout', function($timeout){
 		//transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function($scope, iElm, iAttrs, controller) {
-			    
+
+             var zoom = window.innerWidth < window.innerHeight ? 10 : 11; 
+
              var map;
                 function init() {
                     var mapOptions = {
                         center: new google.maps.LatLng(46.701025,7.775386),
-                        zoom: 11,
+                        zoom: zoom,
                         zoomControl: false,
                         disableDoubleClickZoom: true,
                         mapTypeControl: false,
@@ -39,7 +41,7 @@ directive('map', ['$timeout', function($timeout){
                     var mapElement = document.getElementById('swiss-map');
                     var map = new google.maps.Map(mapElement, mapOptions);
                     var locations = [
-            ['Schloss Oberhofen', '3653 Oberhofen, Switzerland', 'undefined', 'undefined', 'undefined', 46.7298, 7.6685, 'https://mapbuildr.com/assets/img/markers/default.png'],['Reception Site', 'undefined', 'undefined', 'undefined', 'undefined', 46.7060902, 7.9015797, 'https://mapbuildr.com/assets/img/markers/default.png']
+            ['Schloss Oberhofen', '3653 Oberhofen, Switzerland', 'undefined', 'undefined', 'undefined', 46.7298, 7.6685, 'https://mapbuildr.com/assets/img/markers/default.png'],['Ringgenberg House', 'Address currently unavailable', 'undefined', 'undefined', 'undefined', 46.7060902, 7.9015797, 'https://mapbuildr.com/assets/img/markers/default.png']
                     ];
                     for (i = 0; i < locations.length; i++) {
                         if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}

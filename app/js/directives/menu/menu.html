@@ -7,7 +7,7 @@
     <a class="header-logo" ng-click="scrollTo('top')" ng-include="'img/logo-small.svg'"></a>
     <a class="header-item" ng-click="scrollTo('timeline')">Timeline</a>
     <a class="header-item" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
-    <!--a class="btn btn-default rsvp-button">RSVP</a-->
+    <button class="btn rsvp-button primary-button" ng-click="toggleModal()">RSVP</button>
 
     <div class="header-mobile-overlay" ng-show="showMobileMenu">
         <div class="header-mobile-overlay-container">
@@ -18,5 +18,7 @@
             <a class="h2" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
         </div>
     </div>
+
+    <div rsvp-modal visible="showModal"></div>
 
 </header>

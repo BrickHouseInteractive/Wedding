@@ -42,7 +42,31 @@
 				$totalPossible = 0;
 				$totalPredicted = 0;
 
+				
+				
+
 				foreach ($response as $guest){
+
+					/*$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+					$charactersLength = strlen($characters);
+					$randomString = '';
+					for ($i = 0; $i < 4; $i++) {
+						$randomString .= $characters[rand(0, $charactersLength - 1)];
+					}
+
+					$url = 'http://localhost:8888/_admin/_guests.php/'.$guest["id"];
+					$options = array(
+						'http' => array(
+							'header'  => "Content-type: application/json\r\n",
+							'method'  => 'PUT',
+							'content' => '{"code":"'.$randomString.'"}'
+						)
+					);
+					$context  = stream_context_create($options);
+					$result = file_get_contents($url, false, $context);
+					if ($result === FALSE)
+					var_dump($result);*/
+
 					echo "<tr>".
 					"<td>".$guest["id"]."</td>".
 					"<td>".$guest["name"]."</td>".

@@ -1,0 +1,108 @@
+<div class="modal" ng-show="visible">
+  <div class="modal-dialog" role="document">'
+    <div id="rsvp-form" class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">RSVP</h3>
+        </div>
+        <!--CODE-->
+        <div ng-show="rsvpState == 'entry'">
+            <div class="modal-body">
+                <form>
+                    <div class="row form-group">
+                        <label class="col-xs-12 text-center">
+                            <p>Please enter your email address.</p>
+                        </label>
+                        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                            <input type="text" class="form-control form-control-lg" ng-model="rsvpInfo.email" placeholder="Email"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="closeModal()">Close</button>
+                <button type="button" class="btn primary-button" ng-click="goToState('form')" ng-disabled="rsvpInfo.email.length < 4">Next</button>
+            </div>
+        </div>
+        <!--FORM-->
+        <div ng-show="rsvpState == 'form'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Will you be attending?</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1">
+                            <input id="attendYes" type="radio" ng-model="rsvpInfo.attending" value="yes"/> <label for="attendYes">Delighted to attend</label>
+                        </div>
+                        <div class="col-xs-5">
+                            <input id="attendNo" type="radio" ng-model="rsvpInfo.attending" value="no"/> <label for="attendNo">Respectfully Decline</label>
+                        </div>
+                    </div>
+                    <div ng-show="rsvpInfo.attending == 'yes'">
+                        <rsvp-person ng-repeat="person in rsvpInfo.guests" person="person" index="$index+1" remove="removeGuest"></rsvp-person>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-xs-12 cursor-pointer" ng-click="addGuest()">
+                                <p style="margin:0"><i class="fa fa-plus green"></i> Add Guest</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="goToState('entry')">Back</button>
+                <button type="button" class="btn primary-button" ng-click="rsvpInfo.attending == 'yes' ? goToState('song') : goToState('decline')" ng-disabled="rsvpInfo.attending != 'yes' && rsvpInfo.attending != 'no'">Next</button>
+            </div>
+        </div>
+        <!-- Song -->
+        <div ng-show="rsvpState == 'song'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Do you have a song request for the reception?</h3>
+                            <textarea class="form-control" ng-model="rsvpInfo.song"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" ng-click="goToState('form')">Back</button>
+                <button type="button" class="btn primary-button" ng-click="goToState('attend')">Next</button>
+            </div>
+        </div>
+        <!-- Not attending -->
+        <div ng-show="rsvpState == 'decline'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Thank you...</h3>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn primary-button" ng-click="closeModal()">Close</button>
+            </div>
+        </div>
+        <!-- Attending -->
+        <div ng-show="rsvpState == 'attend'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Thank You!</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn primary-button" ng-click="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

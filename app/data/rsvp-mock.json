@@ -1,0 +1,17 @@
+{
+    "attending": null,
+    "people":[
+        {
+            "name": "Erik",
+            "attending": true,
+            "meal": null
+        },
+        {
+            "name": "Sarah",
+            "attending": true,
+            "meal": null
+        }
+    ],
+    "plusOne": null,
+    "songChoice": ""
+}

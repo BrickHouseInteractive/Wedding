@@ -37,6 +37,10 @@ p.large{
 }
 label{
 	padding:0 1em;
+	cursor:pointer;
+}
+.cursor-pointer{
+	cursor: pointer;
 }
 a, a:visited{
 	color: #66cc99;
@@ -100,6 +104,10 @@ section{
 .clear-both{
 	clear: both;
 }
+.green{
+	color: #339966;
+}
+
 /* Header */
 .header{
 	width:100%;
@@ -167,11 +175,28 @@ section{
 .rsvp-button{
 	position: absolute;
 	right: 2em;
-	top:1.7em;
+	top:1.6em;
 	vertical-align: middle;
-	transition: top .4s;
+	transition: all .4s;
 	font-weight: bold;
-	color:#666;
+}
+.primary-button, .primary-button:focus{
+	background: #66cc99;
+	border-color:#66cc99;
+	color:#fff;
+	outline: none;
+}
+.primary-button:hover{
+	background:#339966;
+	border-color:#339966;
+	color:#fff;
+}
+.modal{
+	display: block;
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
@@ -191,6 +216,7 @@ section{
 }
 .banner-overlay-image svg{
 	width:100%;
+	max-width:800px;
 }
 .banner-subtext{
 	position: absolute;
@@ -282,6 +308,26 @@ section{
 	margin:0;
 }
 
+/* RSVP */
+.form-control-lg{
+	height: auto;
+	font-size:25px;
+}
+.modal-content{
+	overflow: hidden;
+	transition: height 500ms;
+}
+.modal-header{
+	background:#66cc99;
+	color:#fff;
+}
+.modal-body, .modal-footer{
+	margin:15px 20px;
+}
+.modal-footer{
+	border: none;
+}
+
 /* Other */
 .rounded-panel{
 	padding: 25px;
@@ -304,12 +350,8 @@ section{
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
 }
-.row.match-my-cols > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
-}
+
 .row.match-my-cols > [class*='col-']>* {
  height:100%;
 }
@@ -356,6 +398,15 @@ section{
 	.timeline-icon{
 		position: static !important;
 	}
+	.row.match-my-cols {
+		display: block;
+	}
+}
+@media screen and (orientation: portrait){
+	.banner-image{
+		background-size: auto 100%;
+		background-attachment: scroll;
+	}
 }
 @media screen and (max-width: 1099px){
 	.banner-subtext{
@@ -381,7 +432,7 @@ section{
 	}
 	.rsvp-button{
 		font-size:11px;
-		top:9px;
+		top:8px;
 		right:15px;
 	}
 

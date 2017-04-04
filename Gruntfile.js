@@ -37,6 +37,14 @@ module.exports = function(grunt) {
         ],
         dest: '<%= base.dist %>',
         expand: true
+      },
+      fonts: {
+        cwd: '<%= base.app %>/bower_components/font-awesome/fonts/',
+        src: [
+          '*'
+        ],
+        dest: '<%= base.dist %>/fonts',
+        expand: true
       }
     },
     useminPrepare: {

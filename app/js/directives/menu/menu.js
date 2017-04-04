@@ -18,6 +18,7 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
 
             $scope.showHeader = false;
             $scope.showMobileMenu = false;
+            $scope.showModal = false;
 
             $scope.scrollTo = function(id){
                 $("html, body").animate(
@@ -29,6 +30,11 @@ directive('menu', ['$timeout','$location', '$anchorScroll', function($timeout, $
             }
 
             /* Header */
+            $scope.toggleModal = function(){
+                $scope.showModal = !$scope.showModal;
+                console.log($scope.showModal);
+            }
+
             function checkHeader(){
                 if($(window).scrollTop() > 10){
                     $scope.showHeader = true;
