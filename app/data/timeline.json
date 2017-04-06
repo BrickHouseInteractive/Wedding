@@ -27,8 +27,14 @@
     },
     {
         "type":"right",
-        "text":"Reception at Ringgenberg House",
-        "time":"6:30pm",
+        "text":"Cocktail Hour",
+        "time":"5:30pm",
+        "icon":"fa-glass"
+    },
+    {
+        "type":"left",
+        "text":"Reception at Schloss Oberhofen Restaurant",
+        "time":"6:30pm - 11:00pm",
         "icon":"fa-cutlery"
     },
     {
@@ -36,8 +42,8 @@
         "text":"Wednesday, June 21st"
     },
     {
-        "type":"left",
-        "text":"Depart Ringgenberg House",
+        "type":"right",
+        "text":"Bride and Groom Depart Ringgenberg House",
         "time":"11:00am",
         "icon":"fa-home"
     }

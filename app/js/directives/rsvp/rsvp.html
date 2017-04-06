@@ -33,10 +33,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-5 col-xs-offset-1">
+                        <div class="col-sm-5 col-sm-offset-1">
                             <input id="attendYes" type="radio" ng-model="rsvpInfo.attending" value="yes"/> <label for="attendYes">Delighted to attend</label>
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-sm-5">
                             <input id="attendNo" type="radio" ng-model="rsvpInfo.attending" value="no"/> <label for="attendNo">Respectfully Decline</label>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" ng-click="goToState('entry')">Back</button>
-                <button type="button" class="btn primary-button" ng-click="rsvpInfo.attending == 'yes' ? goToState('song') : goToState('decline')" ng-disabled="rsvpInfo.attending != 'yes' && rsvpInfo.attending != 'no'">Next</button>
+                <button type="button" class="btn primary-button" ng-click="rsvpInfo.attending == 'yes' ? goToState('song') : sendRsvp()" ng-disabled="rsvpInfo.attending != 'yes' && rsvpInfo.attending != 'no'">Next</button>
             </div>
         </div>
         <!-- Song -->
@@ -63,14 +63,14 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h3>Do you have a song request for the reception?</h3>
-                            <textarea class="form-control" ng-model="rsvpInfo.song"></textarea>
+                            <textarea class="form-control form-control-lg" ng-model="rsvpInfo.song"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" ng-click="goToState('form')">Back</button>
-                <button type="button" class="btn primary-button" ng-click="goToState('attend')">Next</button>
+                <button type="button" class="btn primary-button" ng-click="sendRsvp()">Next</button>
             </div>
         </div>
         <!-- Not attending -->
@@ -79,7 +79,11 @@
                 <form>
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Thank you...</h3>
+                            <h3>Thank You</h3>
+                            <p>We are sorry that you are unable to attend. You will be missed! We will be in touch after the wedding with photos and stories.</p>
+                            <p class="text-ccenter">
+                                <img src="img/celebrate.gif" style="max-width:70%"/>
+                            </p>
                         </div>
                     </div>
                 </form>
@@ -94,8 +98,38 @@
                 <form>
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Thank You!</h3>
-                            <p></p>
+                            <h3>Hurray!</h3>
+                            <p>Thank you for RSVPing! We look forward to celebrating with you this June in Interlaken. If you have any questions, please email us at <a href="mailto:wedding@sarahanderik.ch">wedding@sarahanderik.ch</a> or check out our FAQ.</p>
+                            <p class="text-ccenter">
+                                <img src="img/celebrate.gif" style="max-width:70%"/>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn primary-button" ng-click="closeModal()">Close</button>
+            </div>
+        </div>
+        <!-- Loading -->
+        <div ng-show="rsvpState == 'loading'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Sending RSVP</h3>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Error -->
+        <div ng-show="rsvpState == 'error'">
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>An error occurred, please try again.</h3>
                         </div>
                     </div>
                 </form>

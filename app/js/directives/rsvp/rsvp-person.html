@@ -2,10 +2,10 @@
     <hr/>
     <div class="row form-group">
         <label class="col-sm-3 control-label" for="guest{{index}}">Guest {{index}}</label>
-        <div class="col-sm-7">
+        <div class="col-sm-7 col-xs-10">
             <input type="text" class="form-control" ng-model="person.name" id="guest{{index}}">
         </div>
-        <div class="col-sm-2"  ng-click="removeGuest(index)">
+        <div class="col-xs-2"  ng-click="removeGuest(index)">
             <i class="green fa fa-trash fa-lg cursor-pointer" style="margin-top:0.6em"></i>
         </div>
     </div>
@@ -13,10 +13,10 @@
         <label class="col-sm-3 control-label">Meal Choice</label>
         <div class="col-sm-9">
             <label class="radio-inline">
-                <input type="radio" ng-model="person.meal" value="true"> Risotto
+                <input type="radio" ng-model="person.meal" value="Risotto"> Risotto
             </label>
             <label class="radio-inline">
-                <input type="radio" ng-model="person.meal" value="false"> Veal
+                <input type="radio" ng-model="person.meal" value="Veal"> Veal
             </label>
         </div>
     </div>

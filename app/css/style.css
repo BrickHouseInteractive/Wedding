@@ -325,6 +325,7 @@ section{
 	margin:15px 20px;
 }
 .modal-footer{
+	padding-top: 0;
 	border: none;
 }
 

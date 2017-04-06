@@ -32,30 +32,28 @@ for ($i=0;$i<count($columns);$i++) {
   $set.=($i>0?',':'').'`'.$columns[$i].'`=';
   $set.=($values[$i]===null?'NULL':'"'.$values[$i].'"');
 }
-
+echo($set);
 // create SQL based on HTTP method
 switch ($method) {
   case 'GET':
     if($key){
-      //$sql = "select * from $table WHERE email='$key'";
-      $sql = "CALL create_rsvp('$key')";
-      break;
+      $sql = "select * from $table WHERE id='$key'"; break;
+    }else{
+      $sql = "select * from $table"; break;
     }
   case 'PUT':
-    $sql = "update $table set $set where id='$key'";
-    break;
+    $sql = "update $table set $set where id='$key'"; break;
   case 'POST':
-    $sql = ""; break; //"insert into $table set id=uuid(),$set"; break;
+    $sql = "insert into $table set $set"; break;
   case 'DELETE':
-    $sql = "delete $table where id='$key'";
-    break;
+    $sql = "delete $table where id='$key'"; break;
 }
  
 // excecute SQL statement
 $result = mysqli_query($link,$sql);
-
+ 
 // die if SQL statement failed
-if (!$result || mysqli_num_rows($result) == 0 ) {
+if (!$result) {
   http_response_code(404);
   die(mysqli_error());
 }else if($result && $method == 'GET'){
@@ -78,7 +76,7 @@ if ($method == 'GET') {
 // close mysql connection
 mysqli_close($link);
 
-function sendMail($id, $email){
+/*function sendMail($email){
     $message = file_get_contents('phpmailer/save-date.html'); 
     $messageFinal = str_replace('%id%', $id, $message);
     //Create a new PHPMailer instance
@@ -122,5 +120,5 @@ function sendMail($id, $email){
     } else {
         echo "Email sent to ".$email."<br/>";
     }
-}
+}*/
 ?>

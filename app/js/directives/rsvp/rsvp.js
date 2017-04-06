@@ -13,6 +13,7 @@ directive('rsvpModal', ['$timeout', '$http', function($timeout, $http){
 				this.email = email,
 				this.attending = attending;
 				this.guests = guests ? JSON.parse(guests) : [];
+				this.numberGuests = 0;
 				this.song = song;
 			};
 
@@ -33,6 +34,7 @@ directive('rsvpModal', ['$timeout', '$http', function($timeout, $http){
 			$scope.closeModal = function(){
 				$scope.visible = false;
 				$scope.rsvpState = 'entry';
+				$scope.rsvpInfo = new RsvpInfo("", null, "[]", "");
 			}
 
 			$scope.addGuest = function(){
@@ -44,13 +46,20 @@ directive('rsvpModal', ['$timeout', '$http', function($timeout, $http){
 				$scope.rsvpInfo.guests.splice(index-1,1)
 			}
 
-			function PostRsvp(){
-				$http.post('/_admin/_rsvp.php/'+$scope.rsvpInfo.email.toLowerCase())
-				.then(function(response){
+			$scope.sendRsvp = function(){
+				postRsvp();
+			}
 
+			function postRsvp(){
+				$scope.goToState('loading');
+				$scope.rsvpInfo.numberGuests = $scope.rsvpInfo.guests.length;
+				$scope.rsvpInfo.guests = JSON.stringify($scope.rsvpInfo.guests);
+				$http.post('/_admin/_rsvp.php/'+$scope.rsvpInfo.email.toLowerCase(), $scope.rsvpInfo)
+				.then(function(response){
+					$scope.rsvpInfo.attending == 'yes' ? $scope.goToState('attend') : $scope.goToState('decline');
 				},
 				function(reponse){
-
+					$scope.goToState('error');
 				})
 			}
 			
