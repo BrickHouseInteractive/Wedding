@@ -1,7 +1,7 @@
 <div class="text-left">
     <hr/>
     <div class="row form-group">
-        <label class="col-sm-3 control-label" for="guest{{index}}">Guest {{index}}</label>
+        <label class="col-sm-3 control-label" for="guest{{index}}">Guest {{index}} Name</label>
         <div class="col-sm-7 col-xs-10">
             <input type="text" class="form-control" ng-model="person.name" id="guest{{index}}">
         </div>
@@ -13,10 +13,10 @@
         <label class="col-sm-3 control-label">Meal Choice</label>
         <div class="col-sm-9">
             <label class="radio-inline">
-                <input type="radio" ng-model="person.meal" value="Risotto"> Risotto
+                <input type="radio" ng-model="person.meal" value="Veal"> Veal
             </label>
             <label class="radio-inline">
-                <input type="radio" ng-model="person.meal" value="Veal"> Veal
+                <input type="radio" ng-model="person.meal" value="Risotto"> Risotto (V)
             </label>
         </div>
     </div>

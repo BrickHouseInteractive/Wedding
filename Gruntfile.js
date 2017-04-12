@@ -33,6 +33,7 @@ module.exports = function(grunt) {
           //'css/**',
           '**/*.html',
           '**/*.json',
+          '_admin/_rsvp.php',
           '!bower_components/**/*'
         ],
         dest: '<%= base.dist %>',

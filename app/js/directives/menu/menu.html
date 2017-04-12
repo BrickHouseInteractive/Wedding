@@ -1,24 +1,25 @@
-<header class="header" ng-class="{scrolled: showHeader}">
-    <div class="header-mobile-icon fa" ng-class="showMobileMenu ? 'fa-times' : 'fa-bars'" ng-click="toggleMobileMenu()"></div>
-    
-    <a class="header-item" ng-click="scrollTo('story')">Our Story</a>
-    <a class="header-item" ng-click="scrollTo('engagement')">Engagement</a>
-    <a class="header-item" ng-click="scrollTo('venue')">Venue &amp; Location</a>
-    <a class="header-logo" ng-click="scrollTo('top')" ng-include="'img/logo-small.svg'"></a>
-    <a class="header-item" ng-click="scrollTo('timeline')">Timeline</a>
-    <a class="header-item" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
-    <button class="btn rsvp-button primary-button" ng-click="toggleModal()">RSVP</button>
+<div>
+    <header class="header" ng-class="{scrolled: showHeader}">
+        <div class="header-mobile-icon fa" ng-class="showMobileMenu ? 'fa-times' : 'fa-bars'" ng-click="toggleMobileMenu()"></div>
+        
+        <a class="header-item" ng-click="scrollTo('story')">Our Story</a>
+        <a class="header-item" ng-click="scrollTo('engagement')">Engagement</a>
+        <a class="header-item" ng-click="scrollTo('venue')">Venue &amp; Location</a>
+        <a class="header-logo" ng-click="scrollTo('top')" ng-include="'img/logo-small.svg'"></a>
+        <a class="header-item" ng-click="scrollTo('timeline')">Timeline</a>
+        <a class="header-item" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
+        <button class="btn rsvp-button primary-button" ng-click="scrollTo('top'); toggleModal();">RSVP</button>
 
-    <div class="header-mobile-overlay" ng-show="showMobileMenu">
-        <div class="header-mobile-overlay-container">
-            <a class="h2" ng-click="scrollTo('story')">Our Story</a>
-            <a class="h2" ng-click="scrollTo('engagement')">Engagement</a>
-            <a class="h2" ng-click="scrollTo('venue')">Venue &amp; Location</a>
-            <a class="h2" ng-click="scrollTo('timeline')">Timeline</a>
-            <a class="h2" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
+        <div class="header-mobile-overlay" ng-show="showMobileMenu">
+            <div class="header-mobile-overlay-container">
+                <a class="h2" ng-click="scrollTo('story')">Our Story</a>
+                <a class="h2" ng-click="scrollTo('engagement')">Engagement</a>
+                <a class="h2" ng-click="scrollTo('venue')">Venue &amp; Location</a>
+                <a class="h2" ng-click="scrollTo('timeline')">Timeline</a>
+                <a class="h2" ng-click="scrollTo('info')">Transportation &amp; Accomodations</a>
+            </div>
         </div>
-    </div>
+    </header>
 
     <div rsvp-modal visible="showModal"></div>
-
-</header>
+</div>

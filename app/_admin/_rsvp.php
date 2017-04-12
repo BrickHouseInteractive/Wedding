@@ -36,17 +36,18 @@ echo($set);
 // create SQL based on HTTP method
 switch ($method) {
   case 'GET':
-    if($key){
+  $sql = "";
+    /*if($key){
       $sql = "select * from $table WHERE id='$key'"; break;
     }else{
       $sql = "select * from $table"; break;
-    }
+    }*/
   case 'PUT':
-    $sql = "update $table set $set where id='$key'"; break;
+    $sql = ""; //"update $table set $set where id='$key'"; break;
   case 'POST':
     $sql = "insert into $table set $set"; break;
   case 'DELETE':
-    $sql = "delete $table where id='$key'"; break;
+    $sql = ""; //"delete $table where id='$key'"; break;
 }
  
 // excecute SQL statement

@@ -54,7 +54,7 @@ directive('rsvpModal', ['$timeout', '$http', function($timeout, $http){
 				$scope.goToState('loading');
 				$scope.rsvpInfo.numberGuests = $scope.rsvpInfo.guests.length;
 				$scope.rsvpInfo.guests = JSON.stringify($scope.rsvpInfo.guests);
-				$http.post('/_admin/_rsvp.php/'+$scope.rsvpInfo.email.toLowerCase(), $scope.rsvpInfo)
+				$http.post('_admin/_rsvp.php/'+$scope.rsvpInfo.email.toLowerCase(), $scope.rsvpInfo)
 				.then(function(response){
 					$scope.rsvpInfo.attending == 'yes' ? $scope.goToState('attend') : $scope.goToState('decline');
 				},
