@@ -13,8 +13,7 @@ $input = json_decode(file_get_contents('php://input'),true) OR $input = [];
 $table = "guests";
 
 // // connect to the mysql database
-//$link = mysqli_connect('localhost:8889', 'root', 'root', 'wedding');
-$link = mysqli_connect('72.52.231.174', 'weddingmanager', 'Gm;HgC9ES1GJ7I%2p?', 'wedding');
+$link = mysqli_connect('localhost:8889', 'root', 'root', 'wedding');
 mysqli_set_charset($link,'utf8');
 
 // // retrieve the table and key from the path
